@@ -4,6 +4,15 @@ git clone https://github.com/Ericsson/CodeChecker.git --depth 1 ~/codechecker
 cd ~/codechecker
 make venv
 source $PWD/venv/bin/activate
+
+
+#cd ~/codechecker/venv
+#virtualenv -p /usr/bin/python2.7 .
+#cd ~/codechecker
+
 make package
 export PATH="$PWD/build/CodeChecker/bin:$PATH"
 cd ..
+
+
+
