@@ -1,0 +1,9 @@
+#!/bin/bash
+cd ~
+git clone https://github.com/Ericsson/CodeChecker.git --depth 1 ~/codechecker
+cd ~/codechecker
+make venv
+source $PWD/venv/bin/activate
+make package
+export PATH="$PWD/build/CodeChecker/bin:$PATH"
+cd ..
