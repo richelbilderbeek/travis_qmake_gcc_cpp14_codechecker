@@ -12,7 +12,7 @@ install:
   - sudo apt-get install -qq g++-5
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
   # codechecker
-  - sudo apt-get install -qq clang clang-tidy build-essential curl doxygen gcc-multilib git python-virtualenv python-dev thrift-compiler
+  - sudo apt-get install -qq clang build-essential curl doxygen gcc-multilib git python-virtualenv python-dev thrift-compiler
   - ./build_codechecker
 
 script: 
