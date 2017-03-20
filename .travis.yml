@@ -12,13 +12,15 @@ install:
   - sudo apt-get install -qq g++-5
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
   # codechecker
-  - sudo apt-get install -qq clang-3.8 build-essential curl doxygen gcc-multilib git python-virtualenv python-dev thrift-compiler
+  - sudo apt-get install -qq clang clang-tidy build-essential curl doxygen gcc-multilib git python-virtualenv python-dev thrift-compiler
   - ./build_codechecker
 
 script: 
   # Check if versions are new enough
   - which clang-3.8
   - which clang-tidy-3.8
+  - clang -version
+  - clang-tidy -version
   # Setting up
   - source ~/codechecker/venv/bin/activate
   # Path of CodeChecker package
