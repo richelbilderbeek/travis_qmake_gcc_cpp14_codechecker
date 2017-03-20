@@ -29,3 +29,8 @@ Less complex builds:
 
  * No `cppcheck`: [travis_qmake_gcc_cpp14](https://www.github.com/richelbilderbeek/travis_qmake_gcc_cpp14)
 
+
+## External links
+
+ * [https://github.com/Ericsson/codechecker](https://github.com/Ericsson/codechecker)
+

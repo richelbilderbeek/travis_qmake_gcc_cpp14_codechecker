@@ -11,6 +11,15 @@ install:
   # C++14
   - sudo apt-get install -qq g++-5
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
+  # codechecker
+  - sudo apt-get install clang-3.8 build-essential curl doxygen gcc-multilib git python-virtualenv python-dev thrift-compiler
+  - git clone https://github.com/Ericsson/CodeChecker.git --depth 1 ~/codechecker
+  - cd ~/codechecker
+  - make venv
+  - source $PWD/venv/bin/activate
+  - make package
+  - export PATH="$PWD/build/CodeChecker/bin:$PATH"
+  - cd ..
 
 script: 
   # Build and run this project
