@@ -1,18 +1,22 @@
-#!/bin/bash
-cd ~
+# Literally copy pasyted from https://github.com/Ericsson/codechecker#linux
+
+# Install mandatory dependencies for a development and analysis environment.
+# NOTE: clang-3.9 can be replaced by any later versions of LLVM/Clang.
+sudo apt-get install clang-3.9 build-essential curl doxygen gcc-multilib \
+  git python-virtualenv python-dev thrift-compiler
+
+# Check out CodeChecker source code.
 git clone https://github.com/Ericsson/CodeChecker.git --depth 1 ~/codechecker
 cd ~/codechecker
+
+# Create a Python virtualenv and set it as your environment.
 make venv
 source $PWD/venv/bin/activate
 
-
-#cd ~/codechecker/venv
-#virtualenv -p /usr/bin/python2.7 .
-#cd ~/codechecker
-
+# Build and install a CodeChecker package.
 make package
+
+# For ease of access, add the build directory to PATH.
 export PATH="$PWD/build/CodeChecker/bin:$PATH"
+
 cd ..
-
-
-
