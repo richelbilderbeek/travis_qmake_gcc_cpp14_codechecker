@@ -16,20 +16,4 @@ install:
   - ./build_codechecker
 
 script: 
-  # Check if versions are new enough
-  - which clang-3.8
-  - which clang-tidy-3.8
-  - clang -version
-  - clang-tidy -version
-  # Setting up
-  - source ~/codechecker/venv/bin/activate
-  # Path of CodeChecker package
-  - export PATH=~/codechecker/build/CodeChecker/bin:$PATH
-  - CodeChecker check -n test-check -b "qmake && make debug"
-  # - ~/codechecker/build/CodeChecker/bin/CodeChecker check -n test-check -b "qmake && make"
-  # Show website?
-  - CodeChecker server -w /home/travis/.codechecker
-  # Build and run this project
-  - qmake
-  - make debug
-  - ./travis_qmake_gcc_cpp14_codechecker
+  - ./run_codechecker

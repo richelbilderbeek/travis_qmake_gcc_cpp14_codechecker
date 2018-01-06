@@ -1,4 +1,5 @@
-# Literally copy pasyted from https://github.com/Ericsson/codechecker#linux
+#!/bin/bash
+# Literally copy pasted everything below from https://github.com/Ericsson/codechecker#linux
 
 # Install mandatory dependencies for a development and analysis environment.
 # NOTE: clang-3.9 can be replaced by any later versions of LLVM/Clang.
