@@ -15,4 +15,4 @@ export PATH=~/home/richel/build/bin:$PATH
 
 qmake
 
-CodeChecker check -b "make clean && make debug" -o ~/results
+CodeChecker check --enable-all -b "make clean && make debug" -o ~/results
