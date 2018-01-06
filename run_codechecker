@@ -1,18 +1,13 @@
 #!/bin/bash
+
+# Find thrift
 source ~/codechecker/venv/bin/activate
 
-# Path of CodeChecker package
-# NOTE: SKIP this line if you want to always specify CodeChecker's full path.
+# Add CodeChecker to path
 export PATH=~/codechecker/build/CodeChecker/bin:$PATH
-
-# Path of `scan-build.py` (intercept-build)
-# NOTE: SKIP this line if you don't want to use intercept-build.
-export PATH=~/home/richel>/llvm/tools/clang/tools/scan-build-py/bin:$PATH
-
-# Path of the built LLVM/Clang
-# NOTE: SKIP this line if clang is available in your PATH as an installed Linux package.
-export PATH=~/home/richel/build/bin:$PATH
 
 qmake
 
-CodeChecker check --enable-all -b "make clean && make debug" -o ~/results
+CodeChecker check --quiet --enable-all -b "make clean && make debug"
+
+# CodeChecker check --quiet --enable-all -b "make clean && make debug" -o results
